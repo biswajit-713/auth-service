@@ -10,6 +10,7 @@ import org.springframework.security.oauth2.server.authorization.client.JdbcRegis
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.oauth2.server.authorization.settings.ClientSettings;
 
 import java.util.Set;
 import java.util.UUID;
@@ -40,6 +41,7 @@ public class ClientConfiguration {
                                 )))
                                 .redirectUri("http://127.0.0.1:8080/login/oauth2/code/spring")
                                 .scopes((scopes) -> scopes.addAll(Set.of("user.read", "user.write", OidcScopes.OPENID)))
+                                .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
                                 .build()
                 );
             }
