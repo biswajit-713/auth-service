@@ -31,7 +31,7 @@ public class ClientConfiguration {
                         RegisteredClient
                                 .withId(UUID.randomUUID().toString())
                                 .clientId(clientId)
-                                .clientSecret("{bcrypt}$2a$10$6XZRRFIUvvLFzrVQwSrSdeE01q4LOhgBhHHfgEbe0hiN.Iz8TBAZi")
+                                .clientSecret("{bcrypt}$2a$10$E00oLdbSIrPnVkLPa.24AezV3DdQyQaH5FHrrKytIZW2r4OsAotXC")
                                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                                 .authorizationGrantTypes(grantTypes -> grantTypes.addAll(Set.of(
                                         AuthorizationGrantType.CLIENT_CREDENTIALS,

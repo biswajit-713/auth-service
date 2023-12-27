@@ -1,17 +1,16 @@
 version: '3'
 
 services:
-  mysql:
-    image: mysql:5.7
+  postgres:
+    image: postgres:14.10
     container_name: scaler_db
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
-      - scaler:/var/lib/mysql
+      - scaler:/var/lib/postgresql/data
 volumes:
   scaler:

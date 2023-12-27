@@ -25,12 +25,17 @@ spring:
 #            token:
 #              access-token-time-to-live: 30s
   datasource:
-    url: jdbc:mysql://localhost:3306/scaler
-    username: scaler
-    password: password
+    url: jdbc:postgresql://localhost:5434/scaler
+    username: postgres
+    password: postgres
   sql:
     init:
       mode: always
 logging:
   level:
     org.springframework.security: trace
+jwt:
+  key:
+    public: classpath:app.pub
+    private: classpath:app.key # todo - move to environment variable
+    id: bootiful
