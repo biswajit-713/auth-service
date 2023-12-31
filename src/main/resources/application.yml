@@ -38,4 +38,4 @@ jwt:
   key:
     public: classpath:app.pub
     private: classpath:app.key # todo - move to environment variable
-    id: bootiful
+    id: oauth2-key
