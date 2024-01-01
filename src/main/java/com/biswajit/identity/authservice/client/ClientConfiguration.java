@@ -39,7 +39,8 @@ public class ClientConfiguration {
                                         AuthorizationGrantType.AUTHORIZATION_CODE,
                                         AuthorizationGrantType.REFRESH_TOKEN
                                 )))
-                                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/spring")
+//                                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/spring")
+                                .redirectUri("https://oauth.pstmn.io/v1/callback")
                                 .scopes((scopes) -> scopes.addAll(Set.of("user.read", "user.write", OidcScopes.OPENID)))
                                 .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
                                 .build()
