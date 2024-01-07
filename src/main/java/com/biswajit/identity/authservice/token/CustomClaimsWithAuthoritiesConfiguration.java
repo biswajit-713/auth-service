@@ -23,6 +23,7 @@ public class CustomClaimsWithAuthoritiesConfiguration {
                             .map(c -> c.replaceFirst("^ROLE_", ""))
                             .collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
                     claims.put("roles", roles);
+                    claims.put("scope", roles);
                 });
             }
         };

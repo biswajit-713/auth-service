@@ -33,7 +33,8 @@ spring:
       mode: always
 logging:
   level:
-    org.springframework.security: trace
+    org.springframework.security: TRACE
+    org.springframework.boot: DEBUG
 jwt:
   key:
     public: classpath:app.pub
