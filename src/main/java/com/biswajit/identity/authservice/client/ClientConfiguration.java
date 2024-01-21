@@ -40,9 +40,13 @@ public class ClientConfiguration {
                                         AuthorizationGrantType.REFRESH_TOKEN
                                 )))
 //                                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/spring")
-                                .redirectUri("https://oauth.pstmn.io/v1/callback")
+//                                .redirectUri("https://oauth.pstmn.io/v1/callback")
+                                .redirectUri("http://127.0.0.1:3000/authorized")
                                 .scopes((scopes) -> scopes.addAll(Set.of("user.read", "user.write", OidcScopes.OPENID)))
-                                .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
+                                .clientSettings(ClientSettings.builder()
+                                        .requireAuthorizationConsent(true)
+                                        .requireProofKey(true)
+                                        .build())
                                 .build()
                 );
             }
